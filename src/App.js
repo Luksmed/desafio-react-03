@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import fruta from './assets/images/acerola.jpg'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+class Perfil extends Component{
+
+  state = {
+    nome: "Lucas",
+    idade: 31,
+    comidaFavorita: "Bife com fritas",
+    musicas: ["Levels","I wish","Duvet"]
+  }
+  render(){
+    return(
+      <div>
+        <h1>Meu nome é {this.state.nome}</h1>
+        <h2>Tenho {this.state.idade} anos</h2>
+        <h3>Minha comida favorita é {this.state.comidaFavorita}</h3>
+        <p>Minhas músicas favoritas são:
+          <ul>
+            <li>{this.state.musicas[0]}</li>
+            <li>{this.state.musicas[1]}</li>
+            <li>{this.state.musicas[2]}</li>
+          </ul>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <p>Minha fruta favorita é...</p>
+        <img src={fruta} alt = "Acerola"/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default Perfil
